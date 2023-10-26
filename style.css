@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #dc2626;
+    --text-dark: #171717;
+    --text-light: #78716c;
+    --extra-light: #f9f9f9;
+    --white: #ffffff;
+    --black: #000000;
+    --max-width: 1200px;
+}
+
+/* RETIRANDO ATRIBUTOS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* TAMANHO DA PAG E ESPAÇAMENTO */
+.section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+/* COR E TAMANHO DO TITULO 01, 03, 04 */
+.section__header {
+    margin: auto;
+    padding-bottom: 0.75rem;
+    width: fit-content;
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+/* UMA BARRA VERMELHA ABAIXO DOS TITULO 01, 03, 04 */
+.section__header::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 50px;
+    background-color: var(--primary-color);
+}
+
+/* TAMAHO DAS IMAGENS */
+img {
+    width: 100%;
+    display: flex;
+}
+
+/* RETIRANDO A BARRA DE BAIXO DOS NOMES DO MENU */
+a {
+    text-decoration: none;
+}
+
+/* COR DO FUNDO DA PAG, ESTILO DE LETRA  */
+body {
+    font-family: "Poppins" , sans-serif;
+    background-color: var(--extra-light);
+}
+
+/* POSIÇAO DO MENU NO CANTO SUPERIOR DIREITO */
+nav {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* TAMANHO DO LOGO */
+.nav__logo img {
+    max-width: 100px;
+}
+
+/* MENU NA HORIZONTAL E ESPAÇAMENTO */
+.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+/* COR DO MEU */
+.link a {
+    font-weight: 500;
+    color: var(--text-light);
+    transition: 0.3s;
+}
+
+/* TROCA DE COR QUANDO PASSA MAUSE */
+.link a:hover {
+    color: var(--primary-color);
+}
+
+/* IMG */
+.header__container {
+    padding-top: 0;
+}
+
+/* ESPAÇAMENTO */
+.story__container .section__header {
+    margin-bottom: 4rem;
+}
+
+/* ESPAÇAMENTO E COR DO TEXTO */
+.story__container p {
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+/* ESPAÇAMENTO DO TITULO, TAMANHO DA IMAGEM, ESPAÇAMENTO DO TEXTO AO LADO ESQUERDO */
+.evolution__grid {
+    margin-top: 4rem;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* ESPAÇAMENTO ENTRE OS NUMEROS, COMO SE FOSSE UMA REGUA DE DATAS */
+.evolution__nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* COR DOS NUMEROS,BARRA EM CIMA DOS NUMEROS */
+.evolution__nav a {
+    padding: 0.75rem 0;
+    font-weight: 500;
+    color: var(--text-light);
+    border-top: 2px solid transparent;
+    /* ANIMAÇAO */
+    transition: 0.3s;
+}
+
+/* ACAO DE TROCA DE COR COM PASSAR DO MAUSE  */
+.evolution__nav a:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* O NUMERO "1946" FICA COM A COR FIXA EM VERMELHOR */
+.evolution__nav a.active {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* A BARRA ABAIXO DAS DATAS, VIRANDO UMA REGUA DE DATAS */
+.evolution__content p {
+    padding-top: 4rem;
+    border-top: 2px solid var(--text-light);
+}
+
+/* ESPAÇAMENTO E POSIÇAO */
+.feature {
+    margin: 5rem 0;
+    position: relative;
+    isolation: isolate;
+}
+
+/* FUNDO PRETO ONDE VAI A IMG POR CIMA */
+.feature::before,
+.feature::after {
+    position: absolute;
+    content: "";
+    background-color: var(--black);
+    inset: 0;
+    z-index: -1;
+}
+
+/* CONSTRUINDO FORMA GEOMETRICA ONDE IMG VA DENTRO PT-1 */
+.feature::before {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+    transform: skewY(8deg);
+}
+
+/* CONSTRUINDO FORMA GEOMETRICA ONDE IMG VA DENTRO PT-2 */
+.feature::after {
+    -webkit-clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+    transform: skewY(-8deg);
+}
+
+/* TAMANHO DA IMAGEM E POSIÇAO DO TEXTO */
+.feature__container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+/* TAMNHO DA IMG */
+.feature__image img {
+    max-width: 550px;
+    margin: auto;
+}
+
+/* TEXTO */
+.feature__content {
+    margin: auto;
+}
+
+/* COR E POSIÇAO DO TITOLO 03 */
+.feature__content .section__header {
+    width: 100%;
+    margin-bottom: 4rem;
+    color: var(--white);
+}
+
+/* RETIRANDO AS MARCAÇOES, E TAMANHO */
+.feature__content ul {
+    list-style: none;
+    max-width: 400px;
+}
+
+/* COR DO TEXTO,E ESPAÇAMENTO ENTRE OS TEXTO E DA IMG 03 */
+.feature__content li {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    color: var(--white);
+}
+
+/* BARRA LATERA EM CADA TEXTO DA 03 */
+.feature__content li::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 5px;
+    height: 12px;
+    width: 2px;
+    background-color: var(--primary-color);
+}
+
+/* POSIÇAO DO 04 NA DIREITA */
+.gallery__container .section__header {
+    width: 100%;
+}
+
+/* TAMANHO DA IMG E ESPAÇAMENTO ENTRE ELAS E DO TITULO 04 */
+.gallery__grid {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* TAMANHO DAS IMAGENS E ESPAÇAMENTO ENTRE ELAS */
+.gallery__col:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* COR DE FUNDO DO RODA PE */
+.footer {
+    background-color: var(--black);
+}
+
+/* A PROPORÇAO DO RODA PE DIVIDO EM 4 COLUNAS */
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+/* TAMANHO DA IMG */
+.footer__col img {
+    max-width: 100px;
+}
+
+/* RETIRANDO AS DECORAÇOES */
+.footer__col ul {
+    list-style: none;
+}
+
+/* COR DOS TEXTO DO RODA PE E ESPAÇAMENTOS */
+.footer__col li {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    color: var(--white);
+}
+
+/* CONSTRUINDO UMA BARRA E SUA COR EM CADA TEXTO DO RODA PE */
+.footer__col li::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 5px;
+    height: 12px;
+    width: 2px;
+    background-color: var(--primary-color);
+}
+
+/* COR E TAMANHO DO TEXTO RODA PE */
+.footer__col h4 {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+/* POSIÇAO DOS ICONES E ESPAÇAMENTO E DIVIDO EM 2 COLUNAS DE 2 */
+.socials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: fit-content;
+}
+
+/* CONSTRUINDO CIRCULO ENTE OS ICONES */
+.socials span {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.2rem;
+    color: var(--white);
+    background-color: var(--text-light);
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ACAO DO MAUSE FAZ O ICONE TROCAR DE COR */
+.socials span:hover {
+    background-color: var(--text-dark);
+}
+
+/* REDECORANDO QUADRADO ONDE VC COLOCA O EMAIL COR E TAMANHO E ESPAÇAMENTO ENTRE TEXTO */
+.footer__col input {
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+    background-color: var(--text-light);
+}
+
+/* COR DE DENTRO DO EMIAL */
+.footer__col input::placeholder {
+    color: var(--white);
+}
+
+/* COR DO CRIADOR DO PAG */
+.footer__col p {
+    color: var(--white);
+}
+
+@media (width < 900px) {
+    .feature__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .gallery__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .gallery__col:nth-child(2) {
+        gap: 1rem;
+    }
+
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width < 600px) {
+    .nav__links {
+        display: none;
+    }
+
+    .evolution__grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 5rem;
+    }
+
+    .gallery__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
